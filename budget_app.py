@@ -1,3 +1,5 @@
+#Freecodecamp budget app certification project. Does not include the budget graph drawing section. 
+
 class Category:
   def __init__(self, name):
     self.name = name
