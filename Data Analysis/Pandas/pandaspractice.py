@@ -5,6 +5,9 @@ import pandas as pd
 df = pd.read_csv('pandasdataset.csv')
 # if you don't want the first index row, use pd.read_csv('filename.csv', index_col = 0)
 
+# to get excel file into pandas
+# df = pd.read_excel('filename.xlsx')
+
 # get first five rows
 # print(df.head(5))
 
@@ -66,6 +69,8 @@ df = pd.read_csv('pandasdataset.csv')
 # to output to excel
 # df.to_excel('newfilename.xlsx', index = False)
 
+# can change data type using dataframecolumn.astype('datatype")
+# if you want to change a string to an int, use column.astype('int32')
 
 # to filter data, use loc with a condition
 # df.loc[df['Type 1'] == 'Grass']
@@ -123,3 +128,13 @@ df = pd.read_csv('pandasdataset.csv')
 # ex. df.set_index('key').join(other.set_index('key'))
 
 # USE .CONCAT to just add rows to the bottom of dataframe, USE .JOIN to add columns from another dataframe if both have a similar column in common
+
+# web scraping with pandas
+# use import requests module
+# request = requests.get('link')
+# dataframename = pd.read_html(request.text, header = 0)
+# this 'dataframename' will be a list of tables, since a website can have multiple tables
+# actualdataframe = dataframename[index of desired table] to get the actual table
+
+# can use dataframecolumn.apply(lambda x: function) to apply a function to a column
+# lambda x is a lambda function, the x is each individual cell. Can pass x into the function to modify each cell. 
